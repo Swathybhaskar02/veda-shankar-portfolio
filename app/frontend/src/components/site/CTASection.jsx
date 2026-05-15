@@ -101,7 +101,7 @@ export default function CTASection() {
               <span className="italic text-[#c69c6d]">Or a brand worth telling one for.</span>
             </h2>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="hidden lg:flex flex-wrap gap-3 mb-8">
               <button
                 type="button"
                 onClick={() => setActiveTab("business")}
@@ -134,7 +134,7 @@ export default function CTASection() {
               </button>
             </div>
 
-            <div className="relative aspect-[9/16] max-w-[300px] overflow-hidden group">
+            <div className="relative aspect-[9/16] max-w-[300px] overflow-hidden group hidden lg:block">
               <video
                 src="/videos/veda-cta.mp4"
                 autoPlay
@@ -150,7 +150,32 @@ export default function CTASection() {
             </div>
           </div>
 
-          <div className="bg-[#0a0a0a] border border-white/[0.06] p-8 lg:p-10">
+          <div className="bg-[#0a0a0a] border border-white/[0.06] p-6 sm:p-8 lg:p-10">
+            <div className="flex lg:hidden mb-8">
+              <button
+                type="button"
+                onClick={() => setActiveTab("business")}
+                className={`flex-1 py-3 text-[10px] uppercase tracking-[0.12em] font-medium transition-all duration-300 ${
+                  activeTab === "business"
+                    ? "bg-[#c69c6d] text-black"
+                    : "bg-transparent text-[#737373] border border-white/10"
+                }`}
+              >
+                Business
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("casting")}
+                className={`flex-1 py-3 text-[10px] uppercase tracking-[0.12em] font-medium transition-all duration-300 ${
+                  activeTab === "casting"
+                    ? "bg-[#c69c6d] text-black"
+                    : "bg-transparent text-[#737373] border border-white/10"
+                }`}
+              >
+                Casting
+              </button>
+            </div>
+
             {error && (
               <div className="mb-6 p-4 bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
                 {error}
