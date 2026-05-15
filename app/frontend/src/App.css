@@ -1,0 +1,5 @@
+/* Page-specific helpers */
+.App {
+    min-height: 100vh;
+    background-color: var(--vs-bg);
+}

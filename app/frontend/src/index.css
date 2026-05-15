@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --vs-bg: #050505;
+    --vs-surface: #0a0a0a;
+    --vs-text: #f5f3ee;
+    --vs-text-soft: #9a9a9a;
+    --vs-muted: #666666;
+    --vs-accent: #c4a47c;
+    --vs-accent-deep: #a88258;
+    --vs-crimson: #7a1c1c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background-color: var(--vs-bg);
+    color: var(--vs-text);
+    font-family: 'Core Sans C', system-ui, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+}
+
+.font-serif-display {
+    font-family: 'Cormorant', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0;
+}
+
+.font-serif {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 300;
+    letter-spacing: 0;
+}
+
+.font-sans-modern {
+    font-family: 'Core Sans C', system-ui, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.grain-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@keyframes vs-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.vs-marquee {
+    animation: vs-marquee 40s linear infinite;
+}
+
+.vs-marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes vs-fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vs-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.reveal {
+    opacity: 0;
+}
+
+.reveal.in-view {
+    animation: vs-fade-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.name-spread {
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+}
+
+/* Refined typography utilities */
+.text-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--vs-muted);
+}
+
+.text-body {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--vs-text-soft);
+}
+
+.text-heading-lg {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1.05;
+}
+
+/* Subtle transitions */
+.transition-subtle {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Refined borders */
+.border-subtle {
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+.vs-square { 
+    border-radius: 2px; 
+}
+
+::selection {
+    background-color: var(--vs-accent);
+    color: var(--vs-bg);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--vs-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--vs-muted);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--vs-accent);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--vs-text);
+    -webkit-box-shadow: 0 0 0px 1000px var(--vs-surface) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
