@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const films = [
   {
     id: 1,
@@ -24,6 +26,58 @@ const films = [
     poster: "/images/veda-4.jpg",
   },
 ];
+
+function FilmStripDivider() {
+  return (
+    <div className="relative py-10 sm:py-14 lg:py-20 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+        <motion.div 
+          className="flex items-center justify-center gap-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div 
+            className="flex-1 h-px bg-gradient-to-r from-transparent via-[#c4a47c]/30 to-[#c4a47c]/30"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+            style={{ originX: 0 }}
+          />
+          
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            whileInView={{ scale: 1, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4, type: "spring" }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c4a47c" strokeWidth="1.5" className="opacity-50">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" />
+              <line x1="7" y1="2" x2="7" y2="22" />
+              <line x1="17" y1="2" x2="17" y2="22" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <line x1="2" y1="7" x2="7" y2="7" />
+              <line x1="2" y1="17" x2="7" y2="17" />
+              <line x1="17" y1="7" x2="22" y2="7" />
+              <line x1="17" y1="17" x2="22" y2="17" />
+            </svg>
+          </motion.div>
+          
+          <motion.div 
+            className="flex-1 h-px bg-gradient-to-l from-transparent via-[#c4a47c]/30 to-[#c4a47c]/30"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+            style={{ originX: 1 }}
+          />
+        </motion.div>
+      </div>
+    </div>
+  );
+}
 
 function FilmBlock({ film, index, isReversed }) {
   return (
@@ -131,12 +185,14 @@ export default function Filmography() {
 
         <div className="mt-12 sm:mt-16 lg:mt-20">
           {films.map((film, index) => (
-            <FilmBlock 
-              key={film.id}
-              film={film} 
-              index={index}
-              isReversed={index % 2 !== 0}
-            />
+            <div key={film.id}>
+              <FilmBlock 
+                film={film} 
+                index={index}
+                isReversed={index % 2 !== 0}
+              />
+              {index < films.length - 1 && <FilmStripDivider />}
+            </div>
           ))}
         </div>
 
