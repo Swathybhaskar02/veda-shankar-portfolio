@@ -85,37 +85,50 @@ export default function CTASection() {
   }
 
   return (
-    <section id="connect" className="py-32 lg:py-40 px-8 lg:px-16 bg-black overflow-hidden">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex items-center gap-8 mb-16">
-          <p className="uppercase tracking-[0.4em] text-[#c69c6d] text-xs">06 — Collaborate</p>
-          <div className="flex-1 h-px bg-white/10" />
-          <p className="uppercase tracking-[0.3em] text-[#737373] text-xs hidden md:block">Work With Me</p>
-        </div>
-
-        <div className="grid lg:grid-cols-[1fr_380px] gap-16 lg:gap-24 mb-16">
-          <div>
-            <h2 className="font-serif text-[28px] sm:text-[36px] lg:text-[46px] text-[#f5f3ee] leading-[1.15] tracking-normal font-light">
+    <section id="connect" className="bg-black overflow-hidden">
+      <div className="grid lg:grid-cols-2 min-h-screen">
+        <div className="relative flex flex-col justify-center px-8 lg:px-16 py-20 lg:py-0 order-2 lg:order-1">
+          <div className="absolute inset-0 hidden lg:block">
+            <video
+              src="/videos/veda-cta.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover grayscale"
+            />
+            <div className="absolute inset-0 bg-black/70" />
+          </div>
+          
+          <div className="relative z-10">
+            <p className="uppercase tracking-[0.4em] text-[#c69c6d] text-[10px] font-medium mb-8">06 — Collaborate</p>
+            
+            <h2 className="font-serif text-[32px] sm:text-[42px] lg:text-[52px] text-[#f5f3ee] leading-[1.1] tracking-normal font-light mb-8">
               Bring a story.
               <br />
               <span className="italic text-[#c69c6d]">Or a brand worth telling one for.</span>
             </h2>
 
-            <div className="flex gap-3 mt-10">
+            <p className="text-[#9a9a9a] text-[14px] leading-[1.8] font-light max-w-md mb-10 hidden lg:block">
+              Every collaboration begins with a conversation. Whether it's a brand film, 
+              a feature role, or something entirely new — I'm listening.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
               <button
                 type="button"
                 onClick={() => setActiveTab("business")}
                 className={`px-5 py-2.5 text-[10px] uppercase tracking-[0.15em] font-light transition-all duration-400 flex items-center gap-2 ${
                   activeTab === "business"
                     ? "bg-[#c69c6d] text-black border border-[#c69c6d]"
-                    : "bg-transparent text-[#737373] border border-white/15 hover:border-white/25"
+                    : "bg-transparent text-[#f5f3ee] border border-white/25 hover:border-white/40"
                 }`}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
                   <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
-                Business Collaboration
+                Brands
               </button>
               <button
                 type="button"
@@ -123,27 +136,21 @@ export default function CTASection() {
                 className={`px-5 py-2.5 text-[10px] uppercase tracking-[0.15em] font-light transition-all duration-400 flex items-center gap-2 ${
                   activeTab === "casting"
                     ? "bg-[#c69c6d] text-black border border-[#c69c6d]"
-                    : "bg-transparent text-[#737373] border border-white/15 hover:border-white/25"
+                    : "bg-transparent text-[#f5f3ee] border border-white/25 hover:border-white/40"
                 }`}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M15.6 11.6L22 7v10l-6.4-4.6v-1z" />
                   <rect x="2" y="6" width="14" height="12" rx="2" ry="2" />
                 </svg>
-                Casting Inquiry
+                Casting
               </button>
             </div>
           </div>
-
-          <p className="hidden md:block text-[#9a9a9a] text-[13px] leading-[1.8] font-light max-w-sm">
-            Choose the doorway that fits your project. Each enquiry lands
-            directly with me — discreet, considered, and
-            read personally.
-          </p>
         </div>
 
-        <div className="border-t border-white/10 pt-12">
-          <div className="bg-[#0a0a0a] border border-white/[0.06] p-8 lg:p-12">
+        <div className="bg-[#0a0a0a] px-8 lg:px-12 xl:px-16 py-16 lg:py-20 flex flex-col justify-center order-1 lg:order-2">
+          <div className="max-w-lg mx-auto w-full">
             {error && (
               <div className="mb-6 p-4 bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
                 {error}

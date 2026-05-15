@@ -28,53 +28,40 @@ const films = [
 ];
 
 function FilmStripDivider() {
+  const frames = [...Array(20)];
+  
   return (
-    <div className="relative py-10 sm:py-14 lg:py-20 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <motion.div 
-          className="flex items-center justify-center gap-6"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.div 
-            className="flex-1 h-px bg-gradient-to-r from-transparent via-[#c4a47c]/30 to-[#c4a47c]/30"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-            style={{ originX: 0 }}
-          />
-          
-          <motion.div
-            initial={{ scale: 0, rotate: -180 }}
-            whileInView={{ scale: 1, rotate: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4, type: "spring" }}
+    <div className="relative py-8 sm:py-12 overflow-hidden">
+      <motion.div 
+        className="flex"
+        animate={{ x: [0, -960] }}
+        transition={{ 
+          duration: 20, 
+          repeat: Infinity, 
+          ease: "linear" 
+        }}
+      >
+        {[...frames, ...frames].map((_, i) => (
+          <div 
+            key={i} 
+            className="flex-shrink-0 w-24 h-16 mx-1 relative bg-[#0a0a0a] border border-[#c4a47c]/20"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c4a47c" strokeWidth="1.5" className="opacity-50">
-              <rect x="2" y="2" width="20" height="20" rx="2.18" />
-              <line x1="7" y1="2" x2="7" y2="22" />
-              <line x1="17" y1="2" x2="17" y2="22" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <line x1="2" y1="7" x2="7" y2="7" />
-              <line x1="2" y1="17" x2="7" y2="17" />
-              <line x1="17" y1="7" x2="22" y2="7" />
-              <line x1="17" y1="17" x2="22" y2="17" />
-            </svg>
-          </motion.div>
-          
-          <motion.div 
-            className="flex-1 h-px bg-gradient-to-l from-transparent via-[#c4a47c]/30 to-[#c4a47c]/30"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-            style={{ originX: 1 }}
-          />
-        </motion.div>
-      </div>
+            <div className="absolute top-0 left-0 right-0 h-2 flex justify-between px-1">
+              {[...Array(4)].map((_, j) => (
+                <div key={j} className="w-1.5 h-1.5 bg-[#c4a47c]/30 rounded-[1px] mt-0.5" />
+              ))}
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 h-2 flex justify-between px-1">
+              {[...Array(4)].map((_, j) => (
+                <div key={j} className="w-1.5 h-1.5 bg-[#c4a47c]/30 rounded-[1px] mb-0.5" />
+              ))}
+            </div>
+            <div className="absolute inset-2 top-3 bottom-3 bg-[#c4a47c]/5 flex items-center justify-center">
+              <div className="w-4 h-4 border border-[#c4a47c]/20 rounded-full" />
+            </div>
+          </div>
+        ))}
+      </motion.div>
     </div>
   );
 }
