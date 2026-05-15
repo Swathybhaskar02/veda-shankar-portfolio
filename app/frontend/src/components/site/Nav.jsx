@@ -77,29 +77,29 @@ export default function Nav() {
         </button>
       </div>
 
-      <div
-        className={`lg:hidden bg-[#050505] border-t border-white/[0.04] overflow-hidden transition-all duration-500 ${mobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
-      >
-        <nav className="flex flex-col px-6 py-8 gap-1">
-          {navLinks.map((link) => (
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-[#050505] border-t border-white/[0.04]">
+          <nav className="flex flex-col px-6 py-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-[13px] uppercase tracking-[0.15em] text-[#f5f3ee] py-4 border-b border-white/[0.06] font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
             <a
-              key={link.href}
-              href={link.href}
-              className="text-[11px] uppercase tracking-[0.18em] text-[#9a9a9a] hover:text-[#f5f3ee] py-3 border-b border-white/[0.04] font-medium transition-colors duration-400"
+              href="/#connect"
+              className="mt-6 px-5 py-3 bg-[#c4a47c] text-black text-[11px] uppercase tracking-[0.15em] text-center font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {link.label}
+              Enquire
             </a>
-          ))}
-          <a
-            href="/#connect"
-            className="mt-6 px-5 py-3 bg-[#c4a47c]/12 border border-[#c4a47c]/25 text-[#c4a47c] text-[10px] uppercase tracking-[0.15em] text-center font-medium"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Enquire
-          </a>
-        </nav>
-      </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
