@@ -34,8 +34,8 @@ export default function Nav() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-[999] border-b border-white/[0.04]"
-        style={{ backgroundColor: `rgba(5, 5, 5, ${isScrolled || mobileMenuOpen ? 0.98 : 0.85})` }}
+        className="fixed top-0 left-0 right-0 z-[999] border-b border-white/[0.04] transition-all duration-500"
+        style={{ backgroundColor: `rgba(5, 5, 5, ${isScrolled || mobileMenuOpen ? 0.95 : 0.7})` }}
       >
         <div className="absolute inset-0 backdrop-blur-md pointer-events-none" />
 

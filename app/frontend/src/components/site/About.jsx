@@ -23,7 +23,7 @@ export default function About() {
         <div className="lg:col-span-5 lg:row-span-2">
           <div className="relative aspect-[3/4] overflow-hidden grain-overlay group">
             <img
-              src="/images/veda-2.jpg"
+              src="/images/veda-5.jpg"
               alt="Veda Shankar portrait"
               className="w-full h-full object-cover transition-all duration-[1200ms] grayscale group-hover:grayscale-0 group-hover:scale-[1.04]"
             />

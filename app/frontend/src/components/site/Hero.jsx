@@ -1,13 +1,60 @@
+import { useState } from "react";
+
 export default function Hero() {
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [isActive, setIsActive] = useState(false);
+
+  const handleInteraction = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    setPos({
+      x: clientX - rect.left,
+      y: clientY - rect.top,
+    });
+  };
+
   return (
-    <section className="relative min-h-screen flex items-end pb-24 lg:pb-40 overflow-hidden bg-black">
+    <section 
+      className="relative min-h-screen flex items-end pb-24 lg:pb-40 overflow-hidden bg-black cursor-none lg:cursor-auto"
+      onMouseMove={handleInteraction}
+      onMouseEnter={() => setIsActive(true)}
+      onMouseLeave={() => setIsActive(false)}
+      onTouchStart={(e) => { setIsActive(true); handleInteraction(e); }}
+      onTouchMove={handleInteraction}
+      onTouchEnd={() => setIsActive(false)}
+    >
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"
-        style={{ backgroundImage: `url('/images/veda-5.jpg')` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#000000]/70 via-transparent to-transparent" />
-      </div>
+        className="absolute inset-0 bg-cover bg-[center_25%] lg:bg-[60%_25%] bg-no-repeat grayscale"
+        style={{ backgroundImage: `url('/images/veda-2.jpg')` }}
+      />
+      
+      <div
+        className="absolute inset-0 bg-cover bg-[center_25%] lg:bg-[60%_25%] bg-no-repeat pointer-events-none"
+        style={{ 
+          backgroundImage: `url('/images/veda-2.jpg')`,
+          opacity: isActive ? 1 : 0,
+          transition: 'opacity 0.4s ease',
+          maskImage: `radial-gradient(circle 200px at ${pos.x}px ${pos.y}px, black 0%, black 40%, transparent 100%)`,
+          WebkitMaskImage: `radial-gradient(circle 200px at ${pos.x}px ${pos.y}px, black 0%, black 40%, transparent 100%)`,
+        }}
+      />
+
+      {isActive && (
+        <div 
+          className="absolute w-[400px] h-[400px] rounded-full pointer-events-none z-20 mix-blend-soft-light"
+          style={{
+            left: pos.x - 200,
+            top: pos.y - 200,
+            background: 'radial-gradient(circle, rgba(196,164,124,0.3) 0%, rgba(196,164,124,0.1) 40%, transparent 70%)',
+            filter: 'blur(20px)',
+            transition: 'left 0.05s ease-out, top 0.05s ease-out',
+          }}
+        />
+      )}
+
+      <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/50 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#000000]/70 via-transparent to-transparent pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="flex justify-between items-end">
