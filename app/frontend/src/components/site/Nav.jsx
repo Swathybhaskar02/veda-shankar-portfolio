@@ -111,36 +111,21 @@ export default function Nav() {
           </MagneticButton>
         </nav>
 
-        <motion.button
-          className="lg:hidden text-[#f5f3ee] relative w-8 h-8 flex items-center justify-center"
+        <button
+          className="lg:hidden text-[#f5f3ee] relative w-10 h-10 flex items-center justify-center z-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
-          whileTap={{ scale: 0.95 }}
         >
-          <motion.span
-            className="absolute w-4 h-[1.5px] bg-current"
-            animate={{
-              rotate: mobileMenuOpen ? 45 : 0,
-              y: mobileMenuOpen ? 0 : -3,
-            }}
-            transition={{ duration: 0.35 }}
+          <span 
+            className={`absolute w-5 h-[2px] bg-current transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'}`}
           />
-          <motion.span
-            className="absolute w-4 h-[1.5px] bg-current"
-            animate={{
-              opacity: mobileMenuOpen ? 0 : 1,
-            }}
-            transition={{ duration: 0.35 }}
+          <span 
+            className={`absolute w-5 h-[2px] bg-current transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}
           />
-          <motion.span
-            className="absolute w-4 h-[1.5px] bg-current"
-            animate={{
-              rotate: mobileMenuOpen ? -45 : 0,
-              y: mobileMenuOpen ? 0 : 3,
-            }}
-            transition={{ duration: 0.35 }}
+          <span 
+            className={`absolute w-5 h-[2px] bg-current transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'}`}
           />
-        </motion.button>
+        </button>
       </div>
 
       <AnimatePresence>
