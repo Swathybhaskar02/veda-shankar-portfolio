@@ -8,7 +8,7 @@ const films = [
     studio: "Malayalam Cinema",
     director: "Vipin Das",
     role: "Female Lead",
-    approach: "In her breakout role, Veda portrayed a grounded character who becomes the emotional anchor of the film. Her understated presence provided the motivation and support that drives the lead characters forward — a performance that resonated deeply with audiences across Kerala.",
+    approach: "In my breakout role, I portrayed a grounded character who becomes the emotional anchor of the film. My focus was on understated presence — providing the motivation and support that drives the lead characters forward. It was a performance that resonated deeply with audiences across Kerala.",
     awards: "Breakout Performance — 2026 Malayalam Box Office Hit",
     video: "/videos/vaazha2.mp4",
     poster: "/images/veda-3.jpg",
@@ -20,7 +20,7 @@ const films = [
     studio: "Independent Film",
     director: "—",
     role: "Lead",
-    approach: "A project that showcased Veda's range before her mainstream breakthrough. This indie feature allowed her to explore complex emotional terrain, laying the foundation for the nuanced performances that would soon capture wider attention.",
+    approach: "This project showcased my range before my mainstream breakthrough. This indie feature allowed me to explore complex emotional terrain, laying the foundation for the nuanced performances that would soon capture wider attention.",
     awards: null,
     video: "https://videos.pexels.com/video-files/3015510/3015510-hd_1920_1080_24fps.mp4",
     poster: "/images/veda-4.jpg",
@@ -28,41 +28,41 @@ const films = [
 ];
 
 function FilmStripDivider() {
-  const frames = [...Array(30)];
+  const frames = [...Array(40)];
   
   return (
-    <div className="relative py-16 sm:py-20 overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[200%] -rotate-3">
-          <motion.div 
-            className="flex"
-            animate={{ x: [0, -1200] }}
-            transition={{ 
-              duration: 25, 
-              repeat: Infinity, 
-              ease: "linear" 
-            }}
-          >
-            {[...frames, ...frames].map((_, i) => (
-              <div 
-                key={i} 
-                className="flex-shrink-0 w-20 h-14 mx-0.5 relative bg-[#0a0a0a] border border-[#c4a47c]/25"
-              >
-                <div className="absolute top-0 left-0 right-0 h-1.5 flex justify-between px-0.5">
-                  {[...Array(5)].map((_, j) => (
-                    <div key={j} className="w-1 h-1 bg-[#c4a47c]/40 rounded-[1px] mt-0.5" />
-                  ))}
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1.5 flex justify-between px-0.5">
-                  {[...Array(5)].map((_, j) => (
-                    <div key={j} className="w-1 h-1 bg-[#c4a47c]/40 rounded-[1px] mb-0.5" />
-                  ))}
-                </div>
-                <div className="absolute inset-1.5 top-2.5 bottom-2.5 bg-[#c4a47c]/8" />
+    <div className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+      <div className="w-[250%] sm:w-[200%] -rotate-2 sm:-rotate-3">
+        <motion.div 
+          className="flex"
+          initial={{ x: 0 }}
+          animate={{ x: "-50%" }}
+          transition={{ 
+            duration: 20, 
+            repeat: Infinity, 
+            ease: "linear",
+            repeatType: "loop"
+          }}
+        >
+          {[...frames, ...frames].map((_, i) => (
+            <div 
+              key={i} 
+              className="flex-shrink-0 w-16 sm:w-20 h-12 sm:h-14 mx-0.5 relative bg-[#0a0a0a] border border-[#c4a47c]/30"
+            >
+              <div className="absolute top-0 left-0 right-0 h-1.5 flex justify-between px-0.5">
+                {[...Array(5)].map((_, j) => (
+                  <div key={j} className="w-1 h-1 bg-[#c4a47c]/50 rounded-[1px] mt-0.5" />
+                ))}
               </div>
-            ))}
-          </motion.div>
-        </div>
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 flex justify-between px-0.5">
+                {[...Array(5)].map((_, j) => (
+                  <div key={j} className="w-1 h-1 bg-[#c4a47c]/50 rounded-[1px] mb-0.5" />
+                ))}
+              </div>
+              <div className="absolute inset-1.5 top-2.5 bottom-2.5 bg-[#c4a47c]/10" />
+            </div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );

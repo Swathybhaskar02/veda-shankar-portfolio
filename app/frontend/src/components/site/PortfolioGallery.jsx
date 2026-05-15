@@ -139,16 +139,21 @@ function PortfolioCard({ item, onSelect }) {
 function InfiniteSlider({ items, direction = "left", speed = 25, onSelect }) {
   const [isPaused, setIsPaused] = useState(false);
   const duplicatedItems = [...items, ...items, ...items];
+  const containerRef = useRef(null);
 
   return (
     <div 
-      className="overflow-hidden"
+      className="overflow-hidden cursor-grab active:cursor-grabbing"
+      ref={containerRef}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       <motion.div
         className="flex gap-4 sm:gap-6"
-        animate={{
+        drag="x"
+        dragConstraints={containerRef}
+        dragElastic={0.1}
+        animate={isPaused ? {} : {
           x: direction === "left" ? ["0%", "-33.33%"] : ["-33.33%", "0%"],
         }}
         transition={{
@@ -159,9 +164,8 @@ function InfiniteSlider({ items, direction = "left", speed = 25, onSelect }) {
             repeatType: "loop",
           },
         }}
-        style={{
-          animationPlayState: isPaused ? "paused" : "running",
-        }}
+        onDragStart={() => setIsPaused(true)}
+        whileTap={{ cursor: "grabbing" }}
       >
         {duplicatedItems.map((item, index) => (
           <PortfolioCard 
@@ -301,7 +305,7 @@ export default function PortfolioGallery() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <p className="text-[#444444] text-[11px] font-medium">Hover to pause · Click to view</p>
+        <p className="text-[#444444] text-[11px] font-medium">Drag to scroll · Click to view</p>
       </motion.div>
 
       <AnimatePresence>

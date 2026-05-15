@@ -95,8 +95,8 @@ export default function InstagramSection() {
           </div>
 
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            <ReelPreview video="https://videos.pexels.com/video-files/5377684/5377684-uhd_1440_2560_25fps.mp4" index={0} />
-            <ReelPreview video="https://videos.pexels.com/video-files/4057411/4057411-uhd_1440_2732_25fps.mp4" index={1} />
+            <ReelPreview video="/videos/reel-1.mp4" index={0} />
+            <ReelPreview video="/videos/reel-2.mp4" index={1} />
           </div>
         </div>
 
