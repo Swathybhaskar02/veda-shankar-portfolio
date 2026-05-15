@@ -26,7 +26,7 @@ export default function Hero() {
             </p>
 
             <p className="mt-8 font-serif italic text-lg lg:text-xl text-[#f5f3ee]/70 max-w-md leading-[1.6] font-light">
-              "The frame should feel her absence before it ever finds her face."
+              "I want the frame to feel my absence before it ever finds my face."
             </p>
           </div>
 

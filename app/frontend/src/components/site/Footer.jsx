@@ -24,10 +24,10 @@ export default function Footer() {
             <div>
               <p className="uppercase tracking-[0.18em] text-[#666666] text-[10px] font-medium mb-4">Representation</p>
               <p className="text-[#9a9a9a] text-[14px] leading-[1.7]">Independent · India</p>
-              <p className="text-[#9a9a9a] text-[14px] leading-[1.7]">Open to global signings</p>
+              <p className="text-[#9a9a9a] text-[14px] leading-[1.7]">Open to global collaborations</p>
             </div>
             <div>
-              <p className="uppercase tracking-[0.18em] text-[#666666] text-[10px] font-medium mb-4">Based</p>
+              <p className="uppercase tracking-[0.18em] text-[#666666] text-[10px] font-medium mb-4">Based In</p>
               <p className="text-[#9a9a9a] text-[14px] leading-[1.7]">Mumbai · Bengaluru</p>
             </div>
           </div>

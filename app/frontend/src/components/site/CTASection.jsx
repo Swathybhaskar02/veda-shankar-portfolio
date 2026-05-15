@@ -70,7 +70,7 @@ export default function CTASection() {
             </div>
             <h2 className="font-serif text-[32px] text-[#f5f3ee] mb-4 font-light">Thank You</h2>
             <p className="text-[#9a9a9a] text-[14px] leading-[1.7] mb-10">
-              Your inquiry has been received. Veda's team will respond within 48 hours.
+              Your inquiry has been received. I'll respond within 48 hours.
             </p>
             <button
               onClick={() => setSubmitted(false)}
@@ -137,7 +137,7 @@ export default function CTASection() {
 
           <p className="text-[#9a9a9a] text-[13px] leading-[1.8] font-light max-w-sm">
             Choose the doorway that fits your project. Each enquiry lands
-            directly with Veda's representation — discreet, considered, and
+            directly with me — discreet, considered, and
             read personally.
           </p>
         </div>
