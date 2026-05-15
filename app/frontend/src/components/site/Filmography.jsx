@@ -28,40 +28,42 @@ const films = [
 ];
 
 function FilmStripDivider() {
-  const frames = [...Array(20)];
+  const frames = [...Array(30)];
   
   return (
-    <div className="relative py-8 sm:py-12 overflow-hidden">
-      <motion.div 
-        className="flex"
-        animate={{ x: [0, -960] }}
-        transition={{ 
-          duration: 20, 
-          repeat: Infinity, 
-          ease: "linear" 
-        }}
-      >
-        {[...frames, ...frames].map((_, i) => (
-          <div 
-            key={i} 
-            className="flex-shrink-0 w-24 h-16 mx-1 relative bg-[#0a0a0a] border border-[#c4a47c]/20"
+    <div className="relative py-16 sm:py-20 overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-[200%] -rotate-3">
+          <motion.div 
+            className="flex"
+            animate={{ x: [0, -1200] }}
+            transition={{ 
+              duration: 25, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
           >
-            <div className="absolute top-0 left-0 right-0 h-2 flex justify-between px-1">
-              {[...Array(4)].map((_, j) => (
-                <div key={j} className="w-1.5 h-1.5 bg-[#c4a47c]/30 rounded-[1px] mt-0.5" />
-              ))}
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 h-2 flex justify-between px-1">
-              {[...Array(4)].map((_, j) => (
-                <div key={j} className="w-1.5 h-1.5 bg-[#c4a47c]/30 rounded-[1px] mb-0.5" />
-              ))}
-            </div>
-            <div className="absolute inset-2 top-3 bottom-3 bg-[#c4a47c]/5 flex items-center justify-center">
-              <div className="w-4 h-4 border border-[#c4a47c]/20 rounded-full" />
-            </div>
-          </div>
-        ))}
-      </motion.div>
+            {[...frames, ...frames].map((_, i) => (
+              <div 
+                key={i} 
+                className="flex-shrink-0 w-20 h-14 mx-0.5 relative bg-[#0a0a0a] border border-[#c4a47c]/25"
+              >
+                <div className="absolute top-0 left-0 right-0 h-1.5 flex justify-between px-0.5">
+                  {[...Array(5)].map((_, j) => (
+                    <div key={j} className="w-1 h-1 bg-[#c4a47c]/40 rounded-[1px] mt-0.5" />
+                  ))}
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 flex justify-between px-0.5">
+                  {[...Array(5)].map((_, j) => (
+                    <div key={j} className="w-1 h-1 bg-[#c4a47c]/40 rounded-[1px] mb-0.5" />
+                  ))}
+                </div>
+                <div className="absolute inset-1.5 top-2.5 bottom-2.5 bg-[#c4a47c]/8" />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
