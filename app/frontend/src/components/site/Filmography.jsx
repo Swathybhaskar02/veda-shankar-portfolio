@@ -10,7 +10,7 @@ const films = [
     role: "Female Lead",
     approach: "In her breakout role, Veda portrayed a grounded character who becomes the emotional anchor of the film. Her understated presence provided the motivation and support that drives the lead characters forward — a performance that resonated deeply with audiences across Kerala.",
     awards: "Breakout Performance — 2026 Malayalam Box Office Hit",
-    video: "https://videos.pexels.com/video-files/5377700/5377700-uhd_2560_1440_25fps.mp4",
+    video: "/videos/vaazha2.mp4",
     poster: "/images/veda-3.jpg",
   },
   {
