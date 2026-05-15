@@ -134,7 +134,7 @@ export default function CTASection() {
               </button>
             </div>
 
-            <div className="relative aspect-[9/16] max-w-[300px] overflow-hidden group hidden lg:block">
+            <div className="relative aspect-[9/16] max-w-[250px] lg:max-w-[300px] overflow-hidden group">
               <video
                 src="/videos/veda-cta.mp4"
                 autoPlay

@@ -69,50 +69,6 @@ export default function About() {
         </div>
       </div>
 
-      <div className="max-w-[1500px] mx-auto px-6 lg:px-12 mt-28 lg:mt-36">
-        <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-[#c69c6d] mb-12">
-          <span>The Approach</span>
-          <span className="flex-1 h-px bg-white/10" />
-        </div>
-        
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          <div className="relative">
-            <span className="font-serif text-[120px] lg:text-[180px] text-[#c69c6d]/10 absolute -top-10 -left-4 lg:-top-16 lg:-left-8 leading-none select-none">"</span>
-            <blockquote className="relative z-10">
-              <p className="font-serif text-[22px] lg:text-[28px] text-[#f5f3ee] leading-[1.5] font-light italic">
-                For my breakout role, I needed to become the emotional anchor — a grounded presence 
-                who silently drives everyone around her forward. That kind of stillness doesn't come 
-                from nowhere.
-              </p>
-              <p className="font-serif text-[22px] lg:text-[28px] text-[#f5f3ee] leading-[1.5] font-light italic mt-6">
-                I wrote letters to Om for weeks — not to send, but to feel. To understand what it 
-                means to hold someone's world together without asking for anything in return.
-              </p>
-            </blockquote>
-          </div>
-          
-          <div className="flex flex-col justify-center">
-            <p className="text-[#a3a3a3] font-light leading-[1.9] text-[14px] lg:text-[15px]">
-              I spent days observing women in my family — the way my grandmother would pause before 
-              speaking, how my mother's hands moved when she was worried but didn't want anyone to 
-              know. I borrowed their silences for the screen.
-            </p>
-            <p className="text-[#a3a3a3] font-light leading-[1.9] text-[14px] lg:text-[15px] mt-5">
-              I don't believe in shortcuts. For every character, I build a life that exists before 
-              "action" and continues after "cut." I journal in their voice, walk in their rhythm, 
-              and find the weight they carry even when the camera isn't watching.
-            </p>
-            <p className="text-[#a3a3a3] font-light leading-[1.9] text-[14px] lg:text-[15px] mt-5">
-              The performance that resonated with audiences across Kerala wasn't about technique — 
-              it was about truth. And truth takes time.
-            </p>
-            <div className="mt-10 flex items-center gap-4">
-              <div className="w-12 h-[1px] bg-[#c69c6d]" />
-              <span className="font-serif italic text-[#c69c6d] text-[15px]">Veda</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
