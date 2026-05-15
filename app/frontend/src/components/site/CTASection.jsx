@@ -135,7 +135,7 @@ export default function CTASection() {
             </div>
           </div>
 
-          <p className="text-[#9a9a9a] text-[13px] leading-[1.8] font-light max-w-sm">
+          <p className="hidden md:block text-[#9a9a9a] text-[13px] leading-[1.8] font-light max-w-sm">
             Choose the doorway that fits your project. Each enquiry lands
             directly with me — discreet, considered, and
             read personally.
